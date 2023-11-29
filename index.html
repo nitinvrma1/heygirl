@@ -16,13 +16,20 @@
         h1 {
             color: #0b0b0b;
         }
-        img {
-            max-width: 30%;
-            height: 30%;
+        #image-container {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        #image-container img {
+            max-width: 50%;
+            height: 40%;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
         }
+        
         header {
             background: linear-gradient(to right, #e7c9ce, #595276);
             padding: 20px;
@@ -68,46 +75,43 @@
 
     <p>On this special day, I want to express how much you mean to me. Your presence brings joy and happiness into my life, and I'm grateful to have you by my side. Here's a collection of memories and moments that we've shared together:</p>
     <p>Bhai ek saal aur budhi ho gyi tum batao. you are just amazing, be with me always.I miss you more when you are not around. Meet me soon, actually very soon.  </p>
-    <div>
+    <div id="image-container">
         <img src="10.jpeg" alt="Memorable Moment 10">
-        <p>Ye photo yaad hai, ofc yaad hi hogi. Our first meetup at Mandi house. mera rose abhi bhi hai tumhare pass ya fenk diya?</p>
-    </div>
-    <div>
         <img src="9.jpeg" alt="Memorable Moment 9">
-        <p>Ye wala bhi yaad hi hogaa, First meetup at my place,Gaur city. </p>
-    </div>
-    <div>
         <img src="1.jpeg" alt="Memorable Moment 1">
-        <p>what about this?</p>
-    </div>
-    <div>
         <img src="3.jpeg" alt="Memorable Moment 3">
-        <p>That janpath metro station.(-.-)</p>
-    </div>
-    <div>
         <img src="2.jpeg" alt="Memorable Moment 2">
-        <p>wow, so beautiful, so elegant, just looking like a wow. You are very beautiful BAWA.</p>
-    </div>
-    <div>
         <img src="4.jpeg" alt="Memorable Moment 4">
-        <p>ayyy hyyy sharma gyi kyaa, phone kaat di , mammi aa gyi kya(funny?)</p>
-    </div>
-    <div>
         <img src="5.jpeg" alt="Memorable Moment 5">
-        <p>promise?, you will be with me forever.</p>
-    </div>
-    <div>
         <img src="6.jpeg" alt="Memorable Moment 6">
-        <p>I love you with lots of love and kisses and many more..</p>
-    </div>
-    <div>
-        <img src="7.jpeg" alt="Memorable Moment 7">
-        <p>Best picture of us together till date.</p>
-    </div>
-    <div>
         <img src="8.jpeg" alt="Memorable Moment 8">
-        <p>muhhhaaaaa</p>
     </div>
+    <script>
+        // JavaScript code for image slideshow
+        const images = document.querySelectorAll('#image-container img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Show the first image
+        showImage(currentIndex);
+
+        // Change image every 3 seconds (adjust as needed)
+        setInterval(nextImage, 3000);
+    </script>
 
     <!-- Repeat the pattern for the remaining images and paragraphs -->
 
